@@ -1,7 +1,9 @@
-h1 {
+html {
+    background-color: #00BCD4;h1 {
   padding-bottom: 20px;
   
 }
+	
 u {
   display: inline;
   border-radius: 10px;
@@ -11,8 +13,10 @@ u {
  
 }
 
-div{
-  display: inline-block;
+div {
+    border: black solid 2px;
+    background-color :#e6ffff;
+    display: block
 }
 
 
