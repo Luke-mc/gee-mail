@@ -1,18 +1,73 @@
 <html>
 	<head>
-		<script src="js/mail-generator.js"></script>
+        <script src="js/mail-generator.js"></script>
 		<link href="css/style.css" rel="stylesheet" media="screen">
+      <style>
+        div {
+          display: block;
+          text-decoration-color: green;
+        }
+        
+        #new-email{
+          display inline;
+        }
+      </style>
     <script>
+      
       window.onload = function(){
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
         // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
         
-      };
+    var count = 0;
+
+    setInterval(function(){    
+   var email = document.createElement("div");
+        email.classname = "new-email";
+    var newMsg = getNewMessage();
+    var subject = newMsg.subject;
+    var sender = newMsg.sender;
+    var date = newMsg.date;
+    var body = newMsg. body;
+        email.innerHTML = ' <i class="newMsg"></i> ' + 'From:  ' + sender +  '   Subject: ' + subject + ' </br> ' + date;
+        
+       document.body.appendChild(email);
+	    //email to click on to reveal body.
+        
+       var newMessage = document.createElement("div");
+       newMessage.className = "subject";
+       newMessage.id = "words"
+       newMessage.style.display = "none";
+       newMessage.innerHTML = body; 
+        
+       email.appendChild(newMessage);
+	    // body of email
+
+        
+       email.onclick = disMessage;
+        //click function
+	    
+        function disMessage(){
+          document.getElementsByClassName("new-email");
+          if(newMessage.style.display === "none"){
+            newMessage.style.display = "block";
+          }
+          else{
+          newMessage.style.display = "none";
+        }
+      }
+      count++
+      document.getElementById("counter").innerHTML = count;
+      }, 15000);
+       
+        
+    };
+     
     </script>
+    <title>Gee-Mail</title>
+    
+ 
 	</head>
-	<body>
-		<div class="container" id="main">
-			Build Me!
-		</div>
-	</body>
+        <h1 class="container" id="our-headline"><u>Gee-mail App</u><div>Message Count:<i id="counter"></i></div></h1>
+	<body class="container">
+      </body>
 </html>
