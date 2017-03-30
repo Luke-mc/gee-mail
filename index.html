@@ -23,7 +23,7 @@
         
     var count = 0;     
 
-    setInterval(function(){    
+    var run = function(){    
   	 var email = document.createElement("div");
         email.classname = "new-email";
     	var newMsg = getNewMessage();
@@ -60,7 +60,11 @@
       }
       count++
       document.getElementById("counter").innerHTML = count;
-   }, 5000);
+   }
+        for (var i = 0; i < 10; i++) {
+                run();
+            }
+            setInterval(run,5000);
        
         
 };
