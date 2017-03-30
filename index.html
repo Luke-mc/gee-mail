@@ -23,8 +23,9 @@
         
     var count = 0;     
 
-    var run = function(){    
-  	 var email = document.createElement("div");
+    var loadNewMessages = function(){
+	    
+  	var email = document.createElement("div");
         email.classname = "new-email";
     	var newMsg = getNewMessage();
         var subject = newMsg.subject;
@@ -33,9 +34,12 @@
   	var body = newMsg. body;
         email.innerHTML = ' <i class="newMsg"></i> ' + 'From:' + '&nbsp' + sender +  '&nbsp &nbsp &nbsp &nbsp' + ' Subject:' + '&nbsp' + subject + '&nbsp &nbsp &nbsp &nbsp' + date;
         
-       document.body.appendChild(email);
-	    //email to click on to reveal body.
+	    
+      			 document.body.appendChild(email);
+	    		//email to click on to reveal body.
         
+	    
+	    
        var newMessage = document.createElement("div");
        newMessage.className = "subject";
        newMessage.id = "words"
@@ -61,12 +65,17 @@
       count++
       document.getElementById("counter").innerHTML = count;
    }
-        for (var i = 0; i < 10; i++) {
-                run();
+        
+    
+    
+    for (var i = 0; i < 10; i++) {
+                loadNewMessages();
             }
+	      
+	      
+	      
             setInterval(run,5000);
        
-        
 };
 </script>
     <title>Gee-Mail</title>
